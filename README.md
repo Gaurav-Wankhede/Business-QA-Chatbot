@@ -25,63 +25,74 @@ The Business QA Chatbot project provides a conversational interface for business
    cd business-qa-chatbot
    ```
 2. **Create a Virtual Environment (Optional but Recommended)**
-
-
-`python -m venv venv`
-`source venv/bin/activate`  # On Windows use venv\Scripts\activate
-
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use venv\Scripts\activate
+    ```
 3. **Install Dependencies**
 
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-`pip install -r requirements.txt`
+4. **Rename Configuration Files**
 
-4. **Run the Streamlit App**
+    Rename `sample_config.json` to `config.json` and replace the placeholder `"YOUR_API_KEYS"` with your actual API key.
 
-Navigate to the `streamlit_app/` directory and start the Streamlit application:
+5. **Run the Streamlit App**
 
-
-`streamlit run main.py`
+    Navigate to the `streamlit_app/` directory and start the Streamlit application:
+    ```bash
+    `streamlit run main.py`
+    ```
 
 ## Docker Deployment
 1. **Build the Docker Image**
 
-Navigate to the `streamlit_app/` folder where the `Dockerfile` is located. Build the Docker image using:
-
-
-`docker build -t business-qa-chatbot .`
+    Navigate to the `streamlit_app/` folder where the `Dockerfile` is located. Build the Docker image using:
+    
+    ```bash
+    docker build -t business-qa-chatbot .
+    ```
 
 2. **Run the Docker Container**
 
-After building the image, run the Docker container with:
-
-
-`docker run -p 8080:8080 business-qa-chatbot`
+    After building the image, run the Docker container with:
+    
+    ```bash
+    docker run -p 8080:8080 business-qa-chatbot
+    ```
 
 3. **Access the Application**
 
-Open your web browser and navigate to `http://localhost:8080` to access the Streamlit app.
+    Open your web browser and navigate to `http://localhost:8080` to access the Streamlit app.
 
 ## Docker Image Handling
 ### Pulling the Docker Image
 To get the latest Docker image from Docker Hub, use:
 
-
-`docker pull gauravwankhede/business-qa-chatbot:latest`
-
+```bash
+docker pull gauravwankhede/business-qa-chatbot:latest
+```
 ### Building the Docker Image Locally
 
 1. **Navigate to the Directory Containing the Dockerfile**
 
-`cd path/to/streamlit_app`
-
+```bash
+cd path/to/streamlit_app
+```
 2. **Build the Docker Image**
 
-`docker build -t business-qa-chatbot .`
+```bash
+docker build -t business-qa-chatbot .
+```
 
 ### Running the Docker Container
 1. **Run the Docker Container**
 
-`docker run -p 8080:8080 business-qa-chatbot`
+```bash
+docker run -p 8080:8080 business-qa-chatbot
+```
 
 ## PDF Data
 All PDF files used for training the model are stored in the `streamlit_run/data/` folder. Ensure these files are correctly placed for the application to access.
